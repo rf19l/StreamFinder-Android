@@ -5,12 +5,9 @@ import androidx.room.PrimaryKey
 import com.rf.streamfinder.show_result_list.data.model.StreamingPlatform
 
 @Entity
-data class MediaListingEntity(
+data class SearchListEntity(
     val title: String? = null,
     val releaseYear: Int? = null,
     val imdbRating: Double? = null,
-    val streamingList: List<StreamingPlatform>? = listOf(),
-    val purchaseList: List<StreamingPlatform>? = listOf(),
     @PrimaryKey val id: Int? = null
-
 )

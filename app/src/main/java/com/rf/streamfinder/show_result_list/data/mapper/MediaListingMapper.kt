@@ -1,24 +1,20 @@
 package com.rf.streamfinder.show_result_list.data.mapper
 
-import com.rf.streamfinder.show_result_list.data.local.MediaListingEntity
+import com.rf.streamfinder.show_result_list.data.local.SearchListEntity
 import com.rf.streamfinder.show_result_list.domain.model.MediaListing
 
-fun MediaListingEntity.toMediaListing(): MediaListing {
+fun SearchListEntity.toMediaListing(): MediaListing {
     return MediaListing(
         title = title,
         releaseYear = releaseYear,
         imdbRating = imdbRating,
-        streamingList = streamingList,
-        purchaseList = purchaseList
     )
 }
 
-fun MediaListing.toMediaListingEntity(): MediaListingEntity {
-    return MediaListingEntity(
+fun MediaListing.toMediaListingEntity(): SearchListEntity {
+    return SearchListEntity(
         title = title,
         releaseYear = releaseYear,
         imdbRating = imdbRating,
-        streamingList = streamingList,
-        purchaseList = purchaseList
     )
 }
