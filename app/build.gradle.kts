@@ -7,6 +7,7 @@ plugins {
     id("io.realm.kotlin")
     id("kotlinx-serialization")
     id("kotlin-kapt")
+    id("com.google.dagger.hilt.android")
 }
 android {
     namespace = "com.rf.streamfinder"
@@ -90,5 +91,14 @@ dependencies {
     kapt("androidx.room:room-compiler:$roomVersion")
     androidTestImplementation("androidx.room:room-testing:$roomVersion")
 
-
+    //Hilt Dependencies
+    implementation("com.google.dagger:hilt-android:2.44.2")
+    kapt("com.google.dagger:hilt-compiler:2.44.2")
+    androidTestImplementation("com.google.dagger:hilt-android-testing:2.44.2")
+    kaptAndroidTest("com.google.dagger:hilt-compiler:2.44.2")
+    testImplementation("com.google.dagger:hilt-android-testing:2.44.2")
+    kaptTest("com.google.dagger:hilt-compiler:2.44.2")
+}
+kapt{
+    correctErrorTypes = true
 }
