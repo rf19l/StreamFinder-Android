@@ -1,10 +1,12 @@
 val composeVersion =
     rootProject.extra.get("compose_version") as String
+val roomVersion = rootProject.extra.get("room_version") as String
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
     id("io.realm.kotlin")
     id("kotlinx-serialization")
+    id("kotlin-kapt")
 }
 android {
     namespace = "com.rf.streamfinder"
@@ -74,13 +76,19 @@ dependencies {
     debugImplementation("androidx.compose.ui:ui-test-manifest")
     implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.4.1")
 
-    implementation ("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.0-native-mt")
-    implementation ("io.realm.kotlin:library-base:1.4.0")
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.0-native-mt")
+    implementation("io.realm.kotlin:library-base:1.4.0")
 
-    implementation ("io.ktor:ktor-client-android:1.5.0")
-    implementation ("io.ktor:ktor-client-serialization:1.5.0")
-    implementation ("org.jetbrains.kotlinx:kotlinx-serialization-json:1.4.1")
-    implementation ("io.ktor:ktor-client-logging-jvm:1.5.0")
+    /* ktor and kotlinx json */
+    implementation("io.ktor:ktor-client-android:1.5.0")
+    implementation("io.ktor:ktor-client-serialization:1.5.0")
+    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.4.1")
+    implementation("io.ktor:ktor-client-logging-jvm:1.5.0")
+
+    // Room components
+    implementation("androidx.room:room-ktx:$roomVersion")
+    kapt("androidx.room:room-compiler:$roomVersion")
+    androidTestImplementation("androidx.room:room-testing:$roomVersion")
 
 
 }

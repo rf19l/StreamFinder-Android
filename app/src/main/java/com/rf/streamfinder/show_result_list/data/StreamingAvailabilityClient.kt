@@ -5,16 +5,18 @@ import io.ktor.client.HttpClient
 import io.ktor.client.engine.android.Android
 import io.ktor.client.features.json.JsonFeature
 import io.ktor.client.features.json.serializer.KotlinxSerializer
-import io.ktor.client.features.logging.Logging
 import kotlinx.serialization.json.Json
 
 interface StreamingAvailabilityClient {
     //TODO update to use DI library as future enhancement
     suspend fun searchForShows(query: String): List<Media>
 
+    /*
+    TODO convert to Retrofit for android implementation, use ktor for multiplatform
+     */
     companion object {
-        fun newInstance(): StreamingAvailabilityImplementation {
-            return StreamingAvailabilityImplementation(
+        fun newInstance(): StreamingAvailabilityClientImpl {
+            return StreamingAvailabilityClientImpl(
                 client = HttpClient(Android){
                     install(JsonFeature){
                         serializer = KotlinxSerializer(Json{
