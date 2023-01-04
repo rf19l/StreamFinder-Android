@@ -3,8 +3,8 @@ val composeVersion =
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
-    id("org.jetbrains.kotlin.plugin.serialization") version "1.7.20" apply false
     id("io.realm.kotlin")
+    id("kotlinx-serialization")
 }
 android {
     namespace = "com.rf.streamfinder"
