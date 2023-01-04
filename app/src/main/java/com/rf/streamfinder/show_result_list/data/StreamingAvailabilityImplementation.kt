@@ -13,7 +13,7 @@ import io.ktor.client.request.*
  * TODO wrap list in class to better handle errors
  */
 class StreamingAvailabilityImplementation(private val client: HttpClient) : StreamingAvailabilityClient {
-    private val baseUrl: String = "http://127.0.0.1:8080/search?title="
+    private val baseUrl: String = "http://10.0.2.2:8080/search?title="
     override suspend fun searchForShows(query: String): List<Media> {
         return try{
             client.get{
