@@ -98,6 +98,10 @@ dependencies {
     kaptAndroidTest("com.google.dagger:hilt-compiler:2.44.2")
     testImplementation("com.google.dagger:hilt-android-testing:2.44.2")
     kaptTest("com.google.dagger:hilt-compiler:2.44.2")
+
+    //Compose image loading library
+    implementation("io.coil-kt:coil-compose:2.2.2")
+
 }
 kapt{
     correctErrorTypes = true

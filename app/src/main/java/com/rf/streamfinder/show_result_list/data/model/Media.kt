@@ -9,6 +9,7 @@ data class Media(
     var imdbRating: Double? = null,
     var streamingList: List<StreamingPlatform>? = listOf(),
     var purchaseList: List<StreamingPlatform>? = listOf(),
+    var image: String? = null,
 //    @BsonId
 //    var id: String = ObjectId().toString(),
 )
